@@ -16,19 +16,16 @@
     <a class="navbar-brand" style="margin-top: -5px;" href="index.php">Главная</a>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-      <form name = "Form1" method="post"  action="Search.php">
-        <div class = "col-lg-12 col-md-12 col-sm-12">
+      <form method="post" class = "col-lg-4">
           <div class="input-group mb-2">
             <input placeholder = "Поиск" name = "Search" class = "form-control" id = "Doc" type = "text" aria-describedby="button-addon2">
             <div class="input-group-append">
-            <input type="submit" class="btn btn-outline-light But" id="button-addon2" value="Поиск">
+            <input type="submit" class="btn btn-outline-light" id="button-addon2" name = "SearchB" action="Search.php" value="Поиск">
             </div>
           </div>
-        </div>
       </form>
       <br>
-      <div class="col-lg-2 col-md-6 col-sm-6">
-      <form class = "form-inline my-2 my-lg-0">
+      <form class = "form-inline col-lg-2 col-md-6 col-sm-6">
         <?php if($_COOKIE['user'] == ''): ?>
         <div class="btn-group RegSig" role="group" aria-label="Basic example">
         <button type = "button"  class = "btn btn-outline-light" data-toggle="modal" data-target="#Reg">Регистрация</button>
@@ -40,15 +37,15 @@
           <h3 class = ""><?echo $_COOKIE['user']?></h3>
         </div>
         <div class="btn-group RegSig" style = "margin-left: 12.5px;" role="group" aria-label="Second  group">
-          <button type = "button"  class = "btn btn-outline-light"><a class = "But" href = "exit.php">Выход</a>
+          <button type = "button"  class = "btn RegBut"><a class = "But" href = "exit.php">Выход</a>
           </div>
         <?php endif;?>
       </form>
-    </div>
   </div>
 </nav>
 
 <?php  include 'Student.php'  ?>
+<?php  include 'Search.php'  ?>
 
 <div class="modal fade" id="Reg" tabindex="-1" role="dialog" aria-labelledby="modalLabel1">
   <div class="modal-dialog" role="document">
@@ -62,21 +59,21 @@
       <div class="modal-body">
           <form name = "Form1" action="Reg.php" method="post">
               <label>Имя:</label>
-              <input class="form-control" placeholder = "Имя" name = "Name"  method="Reg.php" type = "text"><br>
+              <input class="form-control" placeholder = "Имя" name = "Name"  method="Reg.php" required type = "text"><br>
               <label>Фамилия:</label>
-              <input class="form-control "  placeholder = "Фамилия" name = "Surname"  method="Reg.php" type = "text"><br>
+              <input class="form-control "  placeholder = "Фамилия" name = "Surname"  method="Reg.php" required type = "text"><br>
               <label>Отчество:</label>
-              <input class="form-control "  placeholder = "Отчество" name = "Otchestvo"  method="Reg.php" type = "text"><br>
+              <input class="form-control "  placeholder = "Отчество" name = "Otchestvo"  method="Reg.php" required type = "text"><br>
               <label>Логин:</label>
-              <input class="form-control "  placeholder = "Логин" name = "Login"  method="Reg.php" type = "text"><br>
+              <input class="form-control "  placeholder = "Логин" name = "Login"  method="Reg.php" required type = "text"><br>
               <label>Email адрес:</label>
-              <input class="form-control "  placeholder = "Email" name = "Email"  method="Reg.php" type = "text">
+              <input class="form-control "  placeholder = "Email" name = "Email"  method="Reg.php" required type = "text">
               <small class="form-text text-muted">Мы никогда не передадим вашу электронную почту кому-либо еще.</small><br>
               <label>Пароль:</label>
-              <input class="form-control "  placeholder = "Пароль" name = "Password" method="Reg.php" type = "password">
+              <input class="form-control "  placeholder = "Пароль" name = "Password" method="Reg.php" required type = "password">
               <small class="form-text text-muted">Никому не говорите свой пароль.</small><br>
               <div class="modal-footer">
-              <input type="submit" name="submit" class="btn btn-outline-primary" value="Зарегистрироваться">
+              <input type="submit" name="submit" class="btn RegBut" value="Зарегистрироваться">
           </div>
         </form>
       </div>
@@ -103,7 +100,7 @@
             <input placeholder = "Пароль" name = "Password" class = "form-control" method="Reg.php" type = "password"><br>
         </div>
         <div class="modal-footer">
-          <input type="submit" name="submit" class = "btn btn-outline-primary" value="Войти">
+          <input type="submit" name="submit" class = "btn RegBut" value="Войти">
         </div>
       </form>
     </div>

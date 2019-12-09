@@ -1,31 +1,17 @@
 <?php
 
-    $mysql = new mysqli('localhost', 'mysql', 'mysql', 'poluchenieocenki');
+      $mysql = new mysqli('localhost', 'mysql', 'mysql', 'poluchenieocenki');
 
-    $output = '';
+          if(isset($_POST['SearchB']))
+          {
+            $Search = $_POST['Search'];
 
-    if (isset($_POST['Search']))
-    {
-        $Search = $_POST['Search'];
-        $Search = preg_replace("[A-Za-zА-Яа-яЁё]","", $Search);
+            $Result = $mysql-> query( "SELECT * FROM `student` WHERE `Name` LIKE '$Search' OR  `Surname` LIKE '$Search'");
 
+            $row = $Result -> fetch_assoc();
 
-        $Result = $mysql -> query("SELECT * FROM `student` WHERE Name LIKE '$Search'") or die("Ничего не найдено");
+            echo "<p>".$row['Name']." ".$row['Surname']."</p>";
 
-        $user = $Result->fetch_assoc();
-
-        if (count($user) == 0) { $output = 'Нет результатов'; }
-//        else
-//        {
-//            while ($row = $user)
-//            {
-//                $Name = $row['Name'];
-//                $Surname = $row['Surname'];
-//                $id = $row['id'];
-//
-//                $output .= "<div>".' '.$Name.' '.$Surname."</div>";
-//            }
-//        }
-    }
-    $mysql -> close();
+            $mysql -> close();
+          }
 ?>

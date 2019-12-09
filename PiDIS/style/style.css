@@ -5,6 +5,15 @@ body{background-color: #dedede;}
 
 .navbar{background-color: #009deb;}
 
+.RegBut
+{
+  border: 1px solid #ffffff;
+  color : #ffffff;
+  background-color: #009deb;
+}
+
+.RegBut:hover {background-color:#ffffff;}
+
 .But{color : #ffffff;}
 
 .But:hover{color : #000000;}
