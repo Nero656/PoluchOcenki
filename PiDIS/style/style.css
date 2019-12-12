@@ -4,6 +4,7 @@ body{background-color: #dedede;}
 .RegSig {margin-top: -8.5px;}
 
 .navbar{background-color: #009deb;}
+.grey {color : gray;}
 
 .RegBut
 {
@@ -11,8 +12,43 @@ body{background-color: #dedede;}
   color : #ffffff;
   background-color: #009deb;
 }
+.HrHigh
+{
+  margin-top: -15px;
+}
+.bor
+{
+  padding: 15px;
+  border-radius: 3px;
+  border: 2px solid #009deb;
+}
 
-.RegBut:hover {background-color:#ffffff;}
+.UserName
+{
+  color : #ffffff;
+  margin-top: 5px;
+}
+
+
+
+.Main
+{
+  border-radius: 3px;
+  margin-top: 3.5em;
+  background-color: #ffffff;
+  margin-left: 65px;
+  height:100%;
+}
+
+.tab
+{
+  border: 1.5px solid rgb(185, 187, 186);
+}
+
+.RegBut:hover {
+  color : #000000;
+  background-color:#ffffff;
+}
 
 .But{color : #ffffff;}
 
@@ -20,7 +56,7 @@ body{background-color: #dedede;}
 
 a:hover{text-decoration: none;}
 
-/* @media only screen and (max-width: 160px)
+@media only screen and (min-width: 984px)
 {
-  .RegAuht{margin-left: 600px;}
-} */
+  .SearchLeft{margin-left: -100px;}
+}
